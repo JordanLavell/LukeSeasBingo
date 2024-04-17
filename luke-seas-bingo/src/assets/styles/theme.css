@@ -1,0 +1,98 @@
+/* theme.css */
+
+
+
+:root {
+	--background-color: #f0f4ef; /* Soft green pastel */
+	--text-color: #5d737e; /* Slate gray */
+	--card-color: #e4e9eb; /* Light gray */
+	--marked-color: #ee6c4d; /* Pastel red */
+	--hover-scale: 1.1; /* Scale for hover animation */
+	--transition-speed: 0.3s; /* Speed for transitions */
+  }
+
+
+  @font-face {
+	font-family: 'Windlass';
+	src: url('c:\USERS\JORDA\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\WINDLASS.TTF') format('truetype');
+  }
+  
+  .title {
+	font-family: 'Windlass', 'Pirate', sans-serif;
+	font-size: 3em; /* Adjust size as needed */
+	color: var(--text-color);
+	text-align: center;
+	margin-bottom: 20px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  body {
+	background: url('../images/SeaBeach.webp') no-repeat center center fixed;
+	background-size: cover;
+	color: var(--text-color);
+	font-family: 'Pirate', sans-serif;
+  }
+  
+  .header {
+	text-align: center;
+	padding: 20px;
+  }
+  
+  .bingo-card {
+	max-width: 600px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 10px;
+	background-color: var(--card-color);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bingo-square {
+	border: 2px solid var(--text-color);
+	padding: 20px;
+	text-align: center;
+	cursor: pointer;
+	transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+  }
+  
+  .bingo-square:hover {
+	transform: scale(var(--hover-scale));
+  }
+  
+  /* Animation for marking a square */
+  @keyframes mark {
+	from {
+	  background-color: transparent;
+	}
+	to {
+	  background-color: var(--marked-color);
+	}
+  }
+  
+  .bingo-square.marked {
+	animation: mark var(--transition-speed) forwards;
+	text-decoration: line-through;
+  }
+  
+  /* Styles for the reset button */
+  .reset-button {
+	display: block;
+	width: 200px;
+	margin: 20px auto;
+	padding: 10px;
+	font-size: 1.2em;
+	background-color: var(--text-color);
+	color: var(--background-color);
+	border: none;
+	cursor: pointer;
+	transition: background-color var(--transition-speed) ease;
+  }
+  
+  .reset-button:hover {
+	background-color: var(--marked-color);
+	color: var(--background-color);
+  }
+  
