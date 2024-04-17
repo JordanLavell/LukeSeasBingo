@@ -5,7 +5,7 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       {/* Use the class "title" for styling the game title */}
-      <h1 className="title">Sea of Thieves Bingo</h1>
+      <h1 className="title">AcG's Buccaneers Bingo</h1>
     </header>
   );
 };
