@@ -4,7 +4,8 @@
 
 :root {
 	--background-color: #f0f4ef; /* Soft green pastel */
-	--text-color: #5d737e; /* Slate gray */
+	--text-color: #2e8b57; /* Slate gray */
+	--title-color: #2e8b57;
 	--card-color: #e4e9eb; /* Light gray */
 	--marked-color: #ee6c4d; /* Pastel red */
 	--hover-scale: 1.1; /* Scale for hover animation */
@@ -20,14 +21,15 @@
   .title {
 	font-family: 'Windlass', 'Pirate', sans-serif;
 	font-size: 3em; /* Adjust size as needed */
-	color: var(--text-color);
+	color: var(--title-color);
+	font-weight: 900;
 	text-align: center;
 	margin-bottom: 20px;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   body {
-	background: url('../images/SeaBeach.webp') no-repeat center center fixed;
+	background: url('../images/Darkseas.jpg') no-repeat center center fixed;
 	background-size: cover;
 	color: var(--text-color);
 	font-family: 'Pirate', sans-serif;
@@ -51,7 +53,7 @@
   }
   
   .bingo-square {
-	border: 2px solid var(--text-color);
+	border: 2px solid var(--text-color);	
 	padding: 20px;
 	text-align: center;
 	cursor: pointer;
@@ -75,6 +77,7 @@
   .bingo-square.marked {
 	animation: mark var(--transition-speed) forwards;
 	text-decoration: line-through;
+	color: #fff;
   }
   
   /* Styles for the reset button */
