@@ -7,7 +7,7 @@
 	--text-color: #2e8b57; /* Slate gray */
 	--title-color: #2e8b57;
 	--card-color: #e4e9eb; /* Light gray */
-	--marked-color: #ee6c4d; /* Pastel red */
+	--marked-color: #C23B22; /* Pastel red */
 	--hover-scale: 1.1; /* Scale for hover animation */
 	--transition-speed: 0.3s; /* Speed for transitions */
   }
@@ -32,6 +32,7 @@
 	background: url('../images/Darkseas.jpg') no-repeat center center fixed;
 	background-size: cover;
 	color: var(--text-color);
+	font-weight: 500;
 	font-family: 'Pirate', sans-serif;
   }
   
@@ -52,13 +53,26 @@
 	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .bingo-square {
+  /* .bingo-square {
 	border: 2px solid var(--text-color);	
 	padding: 20px;
 	text-align: center;
 	cursor: pointer;
 	transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
-  }
+  } */
+
+  .bingo-square {
+    border: 2px solid var(--text-color);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+    height: 75px;  /* Set a fixed height for all bingo squares */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+	font-weight: bold;
+}
   
   .bingo-square:hover {
 	transform: scale(var(--hover-scale));
@@ -73,12 +87,68 @@
 	  background-color: var(--marked-color);
 	}
   }
+
+
+  @keyframes pirateMark {
+	0% {
+	  transform: rotate(0deg);
+	}
+	25% {
+	  transform: rotate(-10deg);
+	}
+	75% {
+	  transform: rotate(10deg);
+	}
+	100% {
+	  transform: rotate(0deg);
+	}
+  }
+
+
+
+
+
+  @keyframes treasureMapCross {
+	0% {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+	50% {
+	  transform: scale(1.2);
+	  opacity: 0.8;
+	}
+	100% {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+  }
+  
+  .bingo-square.marked::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60px;
+	height: 60px;
+	background-image: url('../images/AcgCynergy800x800.png'); /* Replace with your image */
+	background-size: cover;
+	animation: treasureMapCross 2s ease-in-out infinite;
+  }
   
   .bingo-square.marked {
-	animation: mark var(--transition-speed) forwards;
+	animation: pirateMark 0.5s ease-in-out forwards, mark var(--transition-speed) forwards;
+	/* Existing styles... */
+	/* animation: mark var(--transition-speed) forwards; */
 	text-decoration: line-through;
 	color: #fff;
   }
+  
+  /* .bingo-square.marked {
+	animation: mark var(--transition-speed) forwards;
+	text-decoration: line-through;
+	color: #fff;
+  } */
   
   /* Styles for the reset button */
   .reset-button {
