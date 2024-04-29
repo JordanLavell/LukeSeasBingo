@@ -99,3 +99,47 @@
 	color: var(--background-color);
   }
   
+
+  /* Mobile styles */
+@media (max-width: 768px) {
+	:root {
+	  --background-color: #f0f4ef; /* Soft green pastel */
+	  --text-color: #2e8b57; /* Slate gray */
+	  --title-color: #2e8b57;
+	  --card-color: #e4e9eb; /* Light gray */
+	  --marked-color: #ee6c4d; /* Pastel red */
+	  --hover-scale: 1.05; /* Slightly smaller scale for mobile */
+	  --transition-speed: 0.3s; /* Speed for transitions */
+	}
+  
+	.title {
+	  font-size: 2em; /* Smaller font size for mobile */
+	  margin-bottom: 15px;
+	}
+  
+	body {
+	  background: url('../images/Darkseas.jpg') no-repeat center center fixed;
+	  background-size: cover;
+	}
+  
+	.header {
+	  padding: 15px;
+	}
+  
+	.bingo-card {
+	  max-width: 90%; /* Full width on mobile */
+	  margin: 0 auto;
+	  grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+	  gap: 5px;
+	}
+  
+	.bingo-square {
+	  padding: 15px;
+	}
+  
+	.reset-button {
+	  width: 150px; /* Smaller button on mobile */
+	  padding: 8px;
+	  font-size: 1em;
+	}
+  }
