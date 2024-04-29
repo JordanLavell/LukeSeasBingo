@@ -12,6 +12,21 @@ const bingoContents = [
   "Cook a perfect meal",
   "Catch a rare fish",
   "Find a message in a bottle",
+  "Find a treasure chest",
+  "Win a ship battle",
+  "Visit an outpost",
+  "Complete a voyage",
+  "Defeat a skeleton captain",
+  "Escape from the Kraken",
+  "Play a shanty with crew",
+  "Cook a perfect meal",
+  "Catch a rare fish",
+  "Find a message in a bottle",
+  "Escape from the Kraken",
+  "Play a shanty with crew",
+  "Cook a perfect meal",
+  "Catch a rare fish",
+  "Find a message in a bottle",
   // ... add more content options relevant to Sea of Thieves
 ];
 
